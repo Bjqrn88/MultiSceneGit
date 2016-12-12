@@ -28,7 +28,5 @@ public class SetImageScript : MonoBehaviour {
 
         texture = req.texture;
         GetComponent<Renderer>().material.mainTexture = texture;
-        
-        yield return null;
     }
 }

@@ -27,6 +27,8 @@ public class TileController : MonoBehaviour {
     public int curRow = 0;
     public int curColum = 0;
 
+    private GvrViewer gvr;
+
     private Texture2D t0Tex;
     private Texture2D t1Tex;
     private Texture2D t2Tex;
@@ -76,7 +78,7 @@ public class TileController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        gvr = new GvrViewer();
     }
 
     // Update is called once per frame
@@ -94,6 +96,10 @@ public class TileController : MonoBehaviour {
                 else {
                     ZoomOut();
                 }
+            }
+
+            if (mTouch.tapCount > 2) {
+                gvr.Recenter();
             }
 
             if (mTouch.deltaTime > 5f) {

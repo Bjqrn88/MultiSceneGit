@@ -55,6 +55,10 @@ public class MoveCameraScript : MonoBehaviour {
                 }
             }
 
+            if (mTouch.tapCount > 2) {
+                gvr.Recenter();
+            }
+
             if (mTouch.deltaTime > 5f) {
                 SceneManager.LoadScene("StartScene");
             }
